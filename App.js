@@ -16,21 +16,18 @@ import getImageForWeather from './utils/getImageForWeather';
 import SearchInput from './components/SearchInput';
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      location: '',
-      temperature: 0,
-      weather: '',
-      loading: false,
-      error: false
-    };
-  }
+  state = {
+    location: '',
+    temperature: 0,
+    weather: '',
+    loading: false,
+    error: false
+  };
 
   componentDidMount() {
     this.handleUpdateLocation('San Francisco');
   }
+
   render() {
     const { loading, error, location, weather, temperature } = this.state;
     return (
